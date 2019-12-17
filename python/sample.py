@@ -2,7 +2,7 @@ import vim
 import re
 # print vim.eval('expand(\'%:p\')')
 
-def GetSyntaxHighlighting():
+def gsh():
     filePath = vim.eval('expand(\'%:p\')')
     fileBuffer = open(filePath, "r");
     structList = []

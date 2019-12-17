@@ -11,5 +11,5 @@ import sample
 EOF
 
 function! Highlighting()
-	python GetSyntaxHighlighting()
+	python gsh()
 endfunction
