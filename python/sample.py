@@ -3,7 +3,7 @@ import vim
 
 def GetSyntaxHighlighting():
     filePath = vim.eval('expand(\'%:p\')')
-    fileBuffer = open(filepath, "r");
+    fileBuffer = open(filePath, "r");
     print fileBuffer.read()
 
 GetSyntaxHighlighting()
