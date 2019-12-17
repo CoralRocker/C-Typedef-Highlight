@@ -1,3 +1,3 @@
 python << EOF
-	print "Hello From Python"
+print "Hello From Python"
 EOF
