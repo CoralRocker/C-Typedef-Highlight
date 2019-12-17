@@ -11,5 +11,7 @@ import sample
 EOF
 
 function! Highlighting()
-	python gsh()
+	python << EOF
+	gsh()
+	EOF
 endfunction
