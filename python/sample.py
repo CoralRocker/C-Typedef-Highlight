@@ -1,1 +1,2 @@
-print "Hello From Source World!"
+import vim
+print vim.eval('expand(\'%:p\')')
