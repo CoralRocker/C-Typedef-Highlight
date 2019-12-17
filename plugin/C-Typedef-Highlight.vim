@@ -1,4 +1,3 @@
-
 function! CReSyntax()
 
 let s:filePath = expand('%:p')
