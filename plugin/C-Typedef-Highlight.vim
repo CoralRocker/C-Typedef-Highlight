@@ -4,7 +4,7 @@ sys.path.append(vim.eval("expand('<sfile>:p:h')")  + '/../plugin/')
 import sample
 EOF
 
-function! gsh()
+function! GSH()
 
 	rd :GetSyntaxHighlighting
 
