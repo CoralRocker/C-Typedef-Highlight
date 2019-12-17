@@ -10,4 +10,4 @@ def GetSyntaxHighlighting():
         txt = re.findall("^\s*typedef\s+(struct|union|enum)\s+\w+", line)
         print txt
 
-GetSyntaxHighlighting()
+# GetSyntaxHighlighting()
