@@ -1,16 +1,8 @@
-
-function! GSH()
-
-	" python GetSyntaxHighlighting()
-	python << EN
-	import sys, vim
-	sys.path.append(vim.eval("expand('<sfile>:p:h')")  + '/../python/')
-	print sys.path
-	import sample
-	GetSyntaxHighlighting()
-	EN
-
+function! IcecreamInitialize()
+python << EOF
+class StrawberryIcecream:
+	def __call__(self):
+		print 'EAT ME'
+EOF
 endfunction
-
-
 
