@@ -7,7 +7,7 @@ class Main(object):
         self.vim = vim
     @neovim.function('GetList')
     def getList(self, args):
-        filePath = vim.eval('expand(\'%:p\')')
+        filePath = self.vim.eval('expand(\'%:p\')')
         fileBuffer = open(filePath, "r");
         structList = []
         for line in fileBuffer:
