@@ -6,6 +6,23 @@ class Main(object):
     def __init__(self, vim):
         self.vim = vim
     
+    def HighLightSyntax(self, structList):
+        if len(structList) > 0:
+            self.vim.command("syntax keyword Custom_Python_Identifiers " + ' '.join(structList))
+            self.vim.command("highlight link Custom_Python_Identifiers Identifier")
+    
+    def getList(self, files):
+        
+        structList = []
+
+        for f in files:
+            for line in f:
+                txt = re.search("^\s*typedef\s+struct\s+(\w+)\s*{*", line)
+                if txt != None:
+                    structList.append(txt.group(1)) 
+            f.close()
+        self.HighLightSyntax(structList)
+
     @neovim.function('GetList')
     def getFiles(self, args):
         filePath = self.vim.eval('expand(\'%:p\')')
@@ -22,19 +39,3 @@ class Main(object):
         # self.vim.command("echo \""+' '.join(fileList)+"\"")
         self.getList(fileList)
 
-    def getList(self, files):
-        
-        structList = []
-
-        for f in files:
-            for line in f:
-                txt = re.search("^\s*typedef\s+struct\s+(\w+)\s*{*", line)
-                if txt != None:
-                    structList.append(txt.group(1)) 
-            f.close()
-        HighLightSyntax(structList)
-
-    def HighLightSyntax(self, structList):
-        if len(structList) > 0:
-            self.vim.command("syntax keyword Custom_Python_Identifiers " + ' '.join(structList))
-            self.vim.command("highlight link Custom_Python_Identifiers Identifier")
