@@ -19,13 +19,20 @@ class Main(object):
 
         fileBuffer.close()
         fileList.append(open(filePath, "r"))
-        self.vim.command("echo \""+' '.join(fileList)+"\"")
+        # self.vim.command("echo \""+' '.join(fileList)+"\"")
+        getList(fileList)
 
     def getList(self, files):
-        for line in fileBuffer:
-            txt = re.search("^\s*typedef\s+struct\s+(\w+)\s*{*", line)
-            if txt != None:
-                structList.append(txt.group(1)) 
+        
+        structList = []
+
+        for f in files:
+            for line in f:
+                txt = re.search("^\s*typedef\s+struct\s+(\w+)\s*{*", line)
+                if txt != None:
+                    structList.append(txt.group(1)) 
+            f.close()
+        HighLightSyntax(structList)
 
     def HighLightSyntax(self, structList):
         if len(structList) > 0:
