@@ -11,8 +11,6 @@ class Main(object):
         fileBuffer = open(filePath, "r");
         structList = []
         for line in fileBuffer:
-            txt = re.findall("^\s*typedef\s+(struct|union|enum)\s+\w+", line)
-            # output = f'echo "{txt}"'
-            # print txt
+            txt = re.findall("^\s*typedef\s+struct\s+\w+\s*{*", line)
             self.vim.command("echo \"" + str(txt) + "\"")
 
