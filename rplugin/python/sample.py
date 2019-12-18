@@ -12,6 +12,7 @@ class Main(object):
         structList = []
         for line in fileBuffer:
             txt = re.findall("^\s*typedef\s+struct\s+\w+\s*{*", line)
-            structList.append(txt)
+            if len(txt) > 0:
+                structList.append(txt)
         self.vim.command("echo \"" + str(structList) + "\"")
 
