@@ -20,7 +20,7 @@ class Main(object):
         fileBuffer.close()
         fileList.append(open(filePath, "r"))
         # self.vim.command("echo \""+' '.join(fileList)+"\"")
-        getList(fileList)
+        self.getList(fileList)
 
     def getList(self, files):
         
