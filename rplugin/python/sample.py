@@ -14,7 +14,7 @@ class Main(object):
             txt = re.search("^\s*typedef\s+struct\s+(\w+)\s*{*", line)
             if txt != None:
                 structList.append(txt.group(1))
-        self.vim.command("echo \"" + str(structList) + "\"")
+        self.vim.command("echo \"" + ' '.join(structList) + "\"")
         
-        self.vim.command("syntax keyword MyStructs " + ' '.join(structList))
-        self.vim.command("highglight link MyStructs Identifier")
+        #self.vim.command("syntax keyword MyStructs " + ' '.join(structList))
+        #self.vim.command("highglight link MyStructs Identifier")
