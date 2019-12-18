@@ -12,7 +12,7 @@ class Main(object):
         fileBuffer = open(filePath, "r");
         fileList = []
         for line in fileBuffer:
-            txt = re.search("^#include\+\"([\w.]+)\"", line)
+            txt = re.search("^#include\s+\"([\w.]+)\"", line)
             if txt != None:
                 self.vim.command("echo \"" + txt.group(1) + "\"")
 
