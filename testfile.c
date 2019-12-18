@@ -10,3 +10,6 @@ typedef struct myNode
 {
 	kmekmd
 }dkm;
+
+myNode
+myStruct* oops
