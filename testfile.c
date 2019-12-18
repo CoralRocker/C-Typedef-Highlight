@@ -1,3 +1,5 @@
+#include <string.h>
+#include "Vector.h"
 typedef struct myStruct {
 dkskms
 	l,sld,sl
