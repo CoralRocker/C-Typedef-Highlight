@@ -6,7 +6,7 @@ EOF
 
 function! GSH()
 
-	rd :GetSyntaxHighlighting
+	python GetSyntaxHighlighting()
 
 endfunction
 
