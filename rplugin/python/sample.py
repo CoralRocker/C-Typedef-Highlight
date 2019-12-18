@@ -18,4 +18,4 @@ class Main(object):
         
         if len(structList) > 0:
             self.vim.command("syntax keyword Custom_Python_Identifiers " + ' '.join(structList))
-            self.vim.command("highglight link Custom_Python_Identifiers Identifier")
+            self.vim.command("highlight link Custom_Python_Identifiers Identifier")
