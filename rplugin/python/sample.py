@@ -16,7 +16,7 @@ class Main(object):
             if txt != None:
                 fileList.append(open(txt.group(1), "r")
                 #self.vim.command("echo \"" + txt.group(1) + "\"")
-        fileBuffer.close()
+        # fileBuffer.close()
         fileList.append(open(filePath, "r"))
         self.vim.command("echo \""+' '.join(fileList)+"\"")
 
