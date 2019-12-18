@@ -16,5 +16,6 @@ class Main(object):
                 structList.append(txt.group(1))
         self.vim.command("echo \"" + ' '.join(structList) + "\"")
         
-        self.vim.command(":syntax keyword Custom_Python_Identifiers " + ' '.join(structList))
-        self.vim.command(":highglight link Custom_Python_Identifiers Identifier")
+        if len(structList) > 0:
+            self.vim.command("syntax keyword Custom_Python_Identifiers " + ' '.join(structList))
+            self.vim.command("highglight link Custom_Python_Identifiers Identifier")
