@@ -1,5 +1,5 @@
 import neovim
-
+import re
 @neovim.plugin
 class Main(object):
 
