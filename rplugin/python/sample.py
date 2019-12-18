@@ -15,4 +15,6 @@ class Main(object):
             if txt != None:
                 structList.append(txt.group(1))
         self.vim.command("echo \"" + str(structList) + "\"")
-
+        
+        self.vim.command("syntax keyword MyStructs " + ' '.join(structList))
+        self.vim.command("highglight link MyStructs Identifier")
