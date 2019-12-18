@@ -14,5 +14,5 @@ class Main(object):
             txt = re.findall("^\s*typedef\s+(struct|union|enum)\s+\w+", line)
             # output = f'echo "{txt}"'
             # print txt
-            self.vim.command("echo \"" + txt + "\"")
+            self.vim.command(f"echo \"{str(txt)}\"")
 
