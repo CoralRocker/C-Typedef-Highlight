@@ -1,8 +1,9 @@
 function! IcecreamInitialize()
 python << EOF
-class StrawberryIcecream:
-	def __call__(self):
-		print 'EAT ME'
+def IeatAss():
+	print "Yum"
+
+IeatAss()
 EOF
 endfunction
 
