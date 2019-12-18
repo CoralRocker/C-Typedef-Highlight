@@ -13,5 +13,5 @@ class Main(object):
         for line in fileBuffer:
             txt = re.findall("^\s*typedef\s+(struct|union|enum)\s+\w+", line)
            # print txt
-            self.vim.command(f'echo {txt}')
+            self.vim.command(f"echo \"{txt}\"")
 
