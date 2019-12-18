@@ -14,7 +14,11 @@ class Main(object):
         for line in fileBuffer:
             txt = re.search("^#include\s+\"([\w.]+)\"", line)
             if txt != None:
-                self.vim.command("echo \"" + txt.group(1) + "\"")
+                fileList.append(open(txt.group(1), "r")
+                #self.vim.command("echo \"" + txt.group(1) + "\"")
+        close(fileBuffer)
+        fileList.append(open(filePath, "r"))
+        self.vim.command("echo \""+' '.join(fileList)+"\"")
 
     def getList(self, files):
         for line in fileBuffer:
