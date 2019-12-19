@@ -23,7 +23,7 @@ class Main(object):
             f.close()
         self.HighLightSyntax(structList)
 
-    @neovim.autocmd('InsertLeave')
+    @neovim.command('ReSyn')
     def getFiles(self, args):
         filePath = self.vim.eval('expand(\'%:p\')')
         fileBuffer = open(filePath, "r");
@@ -39,7 +39,7 @@ class Main(object):
         # self.vim.command("echo \""+' '.join(fileList)+"\"")
         self.getList(fileList)
     
-    @neovim.autocmd('InsertLeave', pattern='*', eval='expand("<afile>")')
-    def testAutocmd(self, fname):
-        self.nvim.command("echo \"" + fname + "\"")
+  #  @neovim.autocmd('InsertLeave', pattern='*', eval='expand("<afile>")')
+   # def testAutocmd(self, fname):
+    #    self.nvim.command("echo \"" + fname + "\"")
 
