@@ -23,7 +23,7 @@ class Main(object):
             f.close()
         self.HighLightSyntax(structList)
 
-    @neovim.function('GetList')
+    @neovim.autocmd('InsertLeave')
     def getFiles(self, args):
         filePath = self.vim.eval('expand(\'%:p\')')
         fileBuffer = open(filePath, "r");
