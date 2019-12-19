@@ -23,7 +23,7 @@ class Main(object):
             f.close()
         self.HighLightSyntax(structList)
 
-    @neovim.command('ReSyn', range='', nargs=0, sync=True)
+    @neovim.command('GetSyntaxHighlighting')
     def getFiles(self, args):
         filePath = self.vim.eval('expand(\'%:p\')')
         fileBuffer = open(filePath, "r");
