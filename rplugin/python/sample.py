@@ -41,5 +41,5 @@ class Main(object):
     
     @neovim.autocmd('InsertLeave', pattern='*', eval='expand("<afile>")')
     def testAutocmd(self, fname):
-        self.nvim.out_write(fname)
+        self.nvim.command("echo \"" + fname + "\"")
 
