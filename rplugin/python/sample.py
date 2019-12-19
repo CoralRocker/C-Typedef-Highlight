@@ -39,7 +39,7 @@ class Main(object):
         # self.vim.command("echo \""+' '.join(fileList)+"\"")
         self.getList(fileList)
     
-    @neovim.autocmd('InsertLeave')
-    def testAutocmd(self):
-        self.nvim.out_write("OOP")
+    @neovim.autocmd('InsertLeave', pattern='*', eval='expand("<afile>")')
+    def testAutocmd(self, fname):
+        self.nvim.out_write(fname)
 
