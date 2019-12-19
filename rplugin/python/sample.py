@@ -39,7 +39,6 @@ class Main(object):
         # self.vim.command("echo \""+' '.join(fileList)+"\"")
         self.getList(fileList)
     
-  #  @neovim.autocmd('InsertLeave', pattern='*', eval='expand("<afile>")')
-   # def testAutocmd(self, fname):
-    #    self.nvim.command("echo \"" + fname + "\"")
-
+    @pynvim.autocmd('BufEnter', pattern='*.py', eval='expand("<afile>")', sync=True)
+    def on_bufenter(self, filename):
+        self.nvim.out_write('testplugin is in ' + filename + '\n')
