@@ -38,4 +38,8 @@ class Main(object):
         fileList.append(open(filePath, "r"))
         # self.vim.command("echo \""+' '.join(fileList)+"\"")
         self.getList(fileList)
+    
+    @neovim.autocmd('InsertLeave')
+    def testAutocmd(self):
+        self.nvim.out_write("OOP")
 
